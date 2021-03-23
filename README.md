@@ -1,5 +1,10 @@
 # Group Project 1
 
+## Demo time!
+Here is a demo of the functionality that your app will have: https://group-project-1-demo.herokuapp.com/index.html.
+
+Note that this is just a demo, while the user stories are the real requirements for this project. Also, your project should be well-styled!
+
 ## Getting set up with our API
 1. Go to `http://myapi-profstream.herokuapp.com/` and create an account (you'll only need one account for your team).
 1. Go to Read API Documentation, and take a look at the first three tables: persons, wines, and books. You will choose one of these to build your project around.
