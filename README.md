@@ -6,7 +6,7 @@ Here is a demo of the functionality that your app will have: https://group-proje
 Note that this is just a demo, while the user stories are the real requirements for this project. Also, your project should be well-styled!
 
 ## Getting set up with our API
-1. Go to `http://myapi-profstream.herokuapp.com/` and create an account (you'll only need one account for your team).
+1. Go to http://myapi-profstream.herokuapp.com/ and create an account (you'll only need one account for your team).
 1. Go to Read API Documentation, and take a look at the first three tables: persons, wines, and books. You will choose one of these to build your project around.
 1. Once you've chosen one, go to New Instance, and create the API of your choice.
 1. When you select this instance, you'll see the URL that it can be publicly accessed at.
