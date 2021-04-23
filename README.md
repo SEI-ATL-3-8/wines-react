@@ -14,7 +14,22 @@ Your mission is to build a react frontend that consumes the wines (or books, or 
 ### Tips
 1. Plan out your routes ahead of time. Each different page of the site needs its own route, and its own page component.
 2. Plan out all your components ahead of time, and plan which pieces of state you'll need, and where they'll live. Make a component tree diagram that notes where the state lives, and what each component passes as props to each other component.
-3. For the Single Book view, there are two equally valid approaches:
+3. Use `react-dotenv` to store your backend url. If this process becomes a time vortex it is ok to bail and just hardcode it, but soon it will be not-optional to change our backend url per environment. So take this opportunity to practice! Some notes on setting it up are below.
+4. For the Single Book view, there are two equally valid approaches:
   - Pass the id of the book into the Single Book component and let the Single Book component make an api request for the full info
   - Store the array of all full books info in the top level state, and right before rendering the Single Book component, find the book from your master list that has an id matching your url params, and pass this whole book into the Single Book view as a prop.
-4. To create a page transition after creating a new book or updating an existing book, have a piece of state in the form component called `shouldRedirect` that initially starts as false, and gets set to true after the POST request. Then, conditionally render a `<Redirect />` component (google it!) if this state is true. The end result will be that once the POST request completes, `shouldRedirect` gets set to true, which causes the component to render the `<Redirect />`, which causes react-router to take you to the specified page.
+5. To create a page transition after creating a new book or updating an existing book, have a piece of state in the form component called `shouldRedirect` that initially starts as false, and gets set to true after the POST request. Then, conditionally render a `<Redirect />` component (google it!) if this state is true. The end result will be that once the POST request completes, `shouldRedirect` gets set to true, which causes the component to render the `<Redirect />`, which causes react-router to take you to the specified page.
+
+### using react-dotenv:
+  - install the package
+  - make a .env file in root of react folder
+  - put .env in .gitignore
+  - put /public/env.js in .gitignore
+  - prepend build & start scripts with "react-dotenv && "
+  - add new top level info to package:
+  ```json
+  "react-dotenv": { "whitelist": ["YOUR", "ENV", "VAR", "KEYS"] }
+  ```
+  - set config vars, either in .env
+  - yarn start: even if vars are changed in .env, the changes won't take until you run the start command again
+  - import env from 'react-dotenv' in each file that needs it, access vars from env object
