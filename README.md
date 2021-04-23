@@ -12,7 +12,7 @@ Your mission is to build a react frontend that consumes the wines (or books, or 
 
 
 ### Tips
-1. Plan out your routes ahead of time. Each different page of the site needs its own route, and its own page component.
+1. Plan out your routes ahead of time. Each different page of the site needs its own route, and its own page component. The Home, All Books, and Create A Book views are accessible from the nav, but there are also Edit and Single Books views that are only accessible from non-nav links.
 2. Plan out all your components ahead of time, and plan which pieces of state you'll need, and where they'll live. Make a component tree diagram that notes where the state lives, and what each component passes as props to each other component.
 3. Use `react-dotenv` to store your backend url. If this process becomes a time vortex it is ok to bail and just hardcode it, but soon it will be not-optional to change our backend url per environment. So take this opportunity to practice! Some notes on setting it up are below.
 4. For the Single Book view, there are two equally valid approaches:
