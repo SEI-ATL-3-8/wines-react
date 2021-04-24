@@ -2,7 +2,7 @@ import './App.css';
 import env from 'react-dotenv'
 import axios from 'axios'
 import { useEffect, useState} from 'react'
-import {Route, Link} from 'react-router-dom'
+import {Route, Link, Switch} from 'react-router-dom'
 
 import Home from './pages/Home'
 import AllBooks from './pages/AllBooks'
@@ -20,10 +20,11 @@ function App() {
     <Route exact path = '/'>
       <Home />
     </Route>
-
-    <Route path = '/allbooks' component = {AllBooks} />
-    <Route path = '/allbooks/:id' render = {(routeProps) => {
-      const book
+    
+   
+    <Route exact path = '/allbooks' component = {AllBooks} />
+    <Route path = '/allbooks/:id' render = {(routingInfo) => {
+      return <SingleBook id = {routingInfo.match.params.id} />
     }} />
 
     </div>

@@ -1,7 +1,4 @@
-import {Route} from 'react-router-dom'
-
 import BookList from '../components/BookList'
-import SingleBook from '../pages/SingleBook'
 
 const AllBooks = () => {
 

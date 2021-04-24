@@ -1,20 +1,19 @@
 import { useEffect, useState} from 'react'
 import axios from 'axios'
-// import React, {Component} from 'react'
 import env from 'react-dotenv'
-import {Route} from 'react-router-dom'
 
 const SingleBook = (props) => {
     console.log('made it here', props);
-    // console.log(props.id);
-    const [oneBook, setOneBooks] = useState({})
+    console.log(props.id);
+    const [oneBook, setOneBook] = useState({})
     // console.log(props.url);
-    // console.log(env.API_URL);
+    console.log(env.API_URL);
 
     const fetchOneBook = () => {
         axios.get(`${env.API_URL}/${props.id}`)
         .then((response) => {
-            console.log('line 13', response);
+            console.log(response);
+            setOneBook(response.data)
         })
     }
 
@@ -22,7 +21,10 @@ const SingleBook = (props) => {
 
     return (
         <div>
-            <h1>Single Book View</h1>
+            <h1>{oneBook.title}</h1>
+            <h2>{oneBook.author}</h2>
+            <p>{oneBook.release_date}</p>
+            <img src = {oneBook.image} ></img>
         </div>
     )
 

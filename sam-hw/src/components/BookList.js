@@ -4,7 +4,7 @@ import {useState, useEffect} from 'react'
 import React, {Component} from 'react'
 import {Route, Link} from 'react-router-dom'
 
-const BookList = (props) => {
+const BookList = () => {
     const [allBooks, setAllBooks] = useState([])
 
     const fetchAllBooks = () => {
@@ -19,7 +19,7 @@ const BookList = (props) => {
     
     const bookList = allBooks.map(book => (
         <li key = {book.id}>
-            <Link to = {`/${book.id}`}>{book.title}</Link>
+            <Link to = {`/allbooks/${book.id}`}>{book.title}</Link>
         </li>
     ))
 
