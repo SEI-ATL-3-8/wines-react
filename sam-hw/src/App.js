@@ -1,15 +1,29 @@
 import './App.css';
-import env from 'react-dotenv'
+import {Route, Link} from 'react-router-dom'
 import axios from 'axios'
-import { useEffect, useState} from 'react'
-import {Route, Link, Switch} from 'react-router-dom'
+import env from 'react-dotenv'
 
 import Home from './pages/Home'
 import AllBooks from './pages/AllBooks'
 import SingleBook from './pages/SingleBook'
+import AddBook from './pages/AddBook'
 
 
 function App() {
+
+  const postBook = (book) => {
+    axios.post(`${env.API_URL}`, book)
+    .then((response) => {
+      console.log(response);
+    })
+  }
+
+  const putBook = (book) => {
+    axios.put(`${env.API_URL}/${id}`, book)
+    .then((response) => {
+      console.log(response);
+    })
+  }
 
   return (
     <div className="navBar"> 
@@ -26,6 +40,10 @@ function App() {
     <Route path = '/allbooks/:id' render = {(routingInfo) => {
       return <SingleBook id = {routingInfo.match.params.id} />
     }} />
+
+    <Route path = '/addbook'  >
+      <AddBook postBook = {postBook} />
+      </Route>
 
     </div>
   );

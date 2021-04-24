@@ -1,1 +1,28 @@
+.navBar {
+    text-align: center;
+}
 
+h1 {
+    margin: 30px;
+    font-size: 75px;
+
+}
+
+.bookTitleList {
+    list-style: none;
+    font-size: 30px;
+    margin: 10px;
+}
+
+a {
+    text-decoration: none;
+
+}
+
+.singleBookContainer {
+    text-align: center;
+}
+
+img {
+    width: 30%;
+}

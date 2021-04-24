@@ -18,14 +18,14 @@ const BookList = () => {
     useEffect(fetchAllBooks, [])
     
     const bookList = allBooks.map(book => (
-        <li key = {book.id}>
+        <li className = 'bookTitleList' key = {book.id}>
             <Link to = {`/allbooks/${book.id}`}>{book.title}</Link>
         </li>
     ))
 
     return (
         <div>
-            <ul>
+            <ul className = 'bookListContainer' >
                 {bookList}
             </ul>
         </div>
