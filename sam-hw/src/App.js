@@ -2,22 +2,25 @@ import './App.css';
 import env from 'react-dotenv'
 import axios from 'axios'
 import { useEffect, useState} from 'react'
+import {Route, Link} from 'react-router-dom'
+
+import Home from './pages/Home'
+import AllBooks from './pages/AllBooks'
 
 
 function App() {
-  const [allBooks, setAllBooks] = useState([])
-
-  const fetchAllBooks = () => {
-    axios.get(`${env.API_URL}`)
-      .then((response) => {
-        console.log(response);
-      })
-  }
-
-  useEffect(fetchAllBooks, [])
 
   return (
-    <div className="App"> 
+    <div className="navBar"> 
+    <Link to = '/'>HOME</Link>{' | '}
+    <Link to = '/allbooks'>BOOK COLLECTION</Link>{' | '}
+    <Link to = '/addbook'>ADD BOOK</Link>
+
+    <Route exact path = '/'>
+      <Home />
+    </Route>
+
+    <Route path = '/allbooks' component = {AllBooks} />
 
     </div>
   );
