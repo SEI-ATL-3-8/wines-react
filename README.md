@@ -29,7 +29,7 @@ Your mission is to build a react frontend that consumes the wines (or books, or 
   - add new top level info to package:
   ```json
   "react-dotenv": { "whitelist": ["YOUR", "ENV", "VAR", "KEYS"] },
-  "homepage: "",
+  "homepage": "",
   ```
   - set config vars in .env
   - `yarn start`: after vars are changed in .env, the changes won't take until you run the start command again
