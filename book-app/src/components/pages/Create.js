@@ -8,15 +8,21 @@ const Create = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
         console.log('submitted')
-        console.log(title, author)
+        console.log(title, author, date)
     }
 
     return (
         <div>
-           <form>
-               <input type="text" placeholder="title" />
-               <input type="text" placeholder="author" />
-               <input type="text" placeholder="release-date" />
+           <form onSubmit = {handleSubmit}>
+               <input type="text" placeholder="title" value={title} onChange={
+                   (e) => setTitle(e.target.value)
+               }/>
+               <input type="text" placeholder="author"  value={author} onChange={
+                   (e) => setAuthor(e.target.value)
+               } />
+               <input type="text" placeholder="release-date" value={date} onChange={
+                   (e) => setDate(e.target.value)
+               } />
                <input type="submit" value="submit" />
            </form>
         </div>
