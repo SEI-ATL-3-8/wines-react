@@ -28,8 +28,9 @@ Your mission is to build a react frontend that consumes the wines (or books, or 
   - prepend build & start scripts with "react-dotenv && "
   - add new top level info to package:
   ```json
-  "react-dotenv": { "whitelist": ["YOUR", "ENV", "VAR", "KEYS"] }
+  "react-dotenv": { "whitelist": ["YOUR", "ENV", "VAR", "KEYS"] },
+  "homepage: "",
   ```
-  - set config vars, either in .env
-  - yarn start: even if vars are changed in .env, the changes won't take until you run the start command again
+  - set config vars in .env
+  - `yarn start`: after vars are changed in .env, the changes won't take until you run the start command again
   - import env from 'react-dotenv' in each file that needs it, access vars from env object
