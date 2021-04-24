@@ -1,9 +1,10 @@
 import { useEffect, useState} from 'react'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 import env from 'react-dotenv'
 
 const SingleBook = (props) => {
-    console.log('made it here', props);
+    // console.log('made it here', props);
     // console.log(props.id);
     const [oneBook, setOneBook] = useState({})
     // console.log(props.url);
@@ -27,8 +28,10 @@ const SingleBook = (props) => {
             <img src = {oneBook.image} ></img>
 
             <div className = 'buttonContainer'>
-                <button>Updated</button>
-                <button>Delete</button>
+                <Link to = {`/updatebook/${props.id}`}>
+                    <button>UPDATE</button>
+                </Link>
+                <button>DELETE</button>
 
             </div>
         </div>

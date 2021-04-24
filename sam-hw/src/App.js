@@ -7,6 +7,7 @@ import Home from './pages/Home'
 import AllBooks from './pages/AllBooks'
 import SingleBook from './pages/SingleBook'
 import AddBook from './pages/AddBook'
+import UpdateBook from './pages/UpdateBook'
 
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
   }
 
   const putBook = (book) => {
-    axios.put(`${env.API_URL}/${id}`, book)
+    axios.put(`${env.API_URL}/:id`, book)
     .then((response) => {
       console.log(response);
     })
@@ -44,6 +45,10 @@ function App() {
     <Route path = '/addbook'  >
       <AddBook postBook = {postBook} />
       </Route>
+
+    <Route path = '/updatebook/:id'>
+      <UpdateBook putBook = {putBook} />
+      </Route>  
 
     </div>
   );
