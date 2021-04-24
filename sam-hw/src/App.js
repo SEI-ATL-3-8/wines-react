@@ -6,6 +6,7 @@ import {Route, Link} from 'react-router-dom'
 
 import Home from './pages/Home'
 import AllBooks from './pages/AllBooks'
+import SingleBook from './pages/SingleBook'
 
 
 function App() {
@@ -21,6 +22,9 @@ function App() {
     </Route>
 
     <Route path = '/allbooks' component = {AllBooks} />
+    <Route path = '/allbooks/:id' render = {(routeProps) => {
+      const book
+    }} />
 
     </div>
   );

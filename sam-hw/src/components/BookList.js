@@ -2,7 +2,7 @@ import axios from 'axios'
 import env from 'react-dotenv'
 import {useState, useEffect} from 'react'
 import React, {Component} from 'react'
-import {Link} from 'react-router-dom'
+import {Route, Link} from 'react-router-dom'
 
 const BookList = (props) => {
     const [allBooks, setAllBooks] = useState([])
@@ -10,16 +10,16 @@ const BookList = (props) => {
     const fetchAllBooks = () => {
       axios.get(`${env.API_URL}`)
         .then((response) => {
-            console.log(response);
+            // console.log(response);
           setAllBooks(response.data);
         })
     }
 
     useEffect(fetchAllBooks, [])
     
-    const bookList = allBooks.map(books => (
-        <li key = {books.id}>
-            <Link to = {`allbooks/${books.id}`}>{books.title}</Link>
+    const bookList = allBooks.map(book => (
+        <li key = {book.id}>
+            <Link to = {`/${book.id}`}>{book.title}</Link>
         </li>
     ))
 
