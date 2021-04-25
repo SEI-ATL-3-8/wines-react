@@ -1,13 +1,12 @@
-
 import './Home.css';
 
-export default function Home () {
-    
+import Slideshow from '../../components/SlideShow/Slideshow';
 
-    return (
-    <div className="container">
-        
+const Home = () => (
+    <div className="container-full">
+        <Slideshow images={["wine","wines","grapes"]} />
 
+    </div>
+);
 
-    </div>);
-}
+export default Home;

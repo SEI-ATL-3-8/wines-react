@@ -1,0 +1,11 @@
+.slideshow {
+    
+    height: calc(100vh - 81px);
+  
+}
+
+.slideshow img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}

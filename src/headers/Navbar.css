@@ -28,8 +28,12 @@ header {
 
 .nav-links a {
     text-decoration: none;
-    margin-right: 10px;
+    margin-right: 20px;
     font-size: 18px;
     font-weight: 700;
     color: rgb(0, 0, 0);
+}
+
+.nav-links a:hover {
+    color: rgba(36, 33, 33, 0.199);
 }
