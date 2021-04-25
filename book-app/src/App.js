@@ -6,14 +6,21 @@ import {useState, useEffect} from 'react'
 import Home from './components/pages/Home'
 import AllBook from './components/pages/AllBook'
 import Create from './components/pages/Create'
+import BookList from './components/BookList'
 import Navbar from './components/Navbar'
 
 function App() {
+
+
   return (
     <div className="App">
       <Navbar />
       <Route path="/" component={Home} exact />
       <Route path="/AllBook" component={AllBook} />
+      <Route path="/book/:id" 
+        render={(routingInfo) =>  {
+          console.log(routingInfo)
+        }}/>
       <Route path="/Create" component={Create} />
     </div>
   );

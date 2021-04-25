@@ -1,7 +1,9 @@
 import React from 'react'
 import axios from 'axios'
 import {useEffect, useState} from 'react'
+import { Route } from 'react-router-dom'
 import BookList from '../BookList'
+import oneBook from '../oneBook'
 
 const AllBook = (props) => {
     const [allBooks, setAllBooks] = useState([])
@@ -21,6 +23,13 @@ const AllBook = (props) => {
     return (
         <div>
             <BookList  allBooks={allBooks} />
+            <Route path="/book/:id" 
+        render={(routingInfo) =>  {
+          console.log(routingInfo)
+
+          return<oneBook id={routingInfo.match.params.id} />
+        }}/>
+        <Route path="/oneBook" component={oneBook} />
         </div>
     )
 }

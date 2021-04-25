@@ -25,6 +25,11 @@ const Create = () => {
                } />
                <input type="submit" value="submit" />
            </form>
+           <div>
+            <h1>{title}</h1>
+            <h1>{author}</h1>
+            <h1>{date}</h1>
+           </div>
         </div>
     )
 }
