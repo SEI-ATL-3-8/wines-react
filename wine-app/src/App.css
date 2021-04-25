@@ -78,6 +78,12 @@
   color: white;
 }
 
+.wine-mini-nav {
+  text-decoration: none;
+}
+
+
+
 .wine-detail-container {
   display: flex;
   flex-direction: column;

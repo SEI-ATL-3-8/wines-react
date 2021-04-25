@@ -5,13 +5,11 @@ import SingleWineDetail from '../Components/SingleWineDetail'
 import { Redirect } from 'react-router-dom'
 
 
-
 const SingleWine = (props) => {
 
     const [wineDetail, setWineDetail] = useState([])
     const [deleteRedirect, setDeleteRedirect] = useState(null)
     const [editState, setEditState] = useState(null)
-    const [editRedirect, setEditRedirect] = useState(null)
 
     const [editName, setEditName] = useState()
     const [editYear, setEditYear] = useState()
@@ -21,8 +19,6 @@ const SingleWine = (props) => {
     const [editPrice, setEditPrice] = useState()
     const [editDescription, setEditDescription] = useState()
     const [editImage, setEditImage] = useState()
-
-
 
     const getWine = async () => {
         let response = await axios.get(`${env.API_URL}/${props.id}`)
@@ -53,18 +49,21 @@ const SingleWine = (props) => {
             description: editDescription,
             picture: editImage        
         })
-        console.log(response)
+        console.log('edit complete', response)
     }
 
     return (
-
-        
-
         <div className="wine-detail-container">
 
             { editState === null && 
-                <SingleWineDetail wineDetail={wineDetail} singleType={'view'} handleDelete={handleDelete} triggerEdit={triggerEdit} />
+                <SingleWineDetail 
+                    wineDetail={wineDetail} 
+                    singleType={'view'} 
+                    handleDelete={handleDelete} 
+                    triggerEdit={triggerEdit} 
+                />
             }
+
             { editState === 'active' &&
                 <SingleWineDetail 
                     wineDetail={wineDetail} 
@@ -86,19 +85,15 @@ const SingleWine = (props) => {
                     editPrice={editPrice}
                     editDescription={editDescription}
                     editImage={editImage} 
-                
                 /> 
-            
             }
-                   
 
-            { deleteRedirect && <Redirect to='/wines' /> }  
+            { deleteRedirect && <Redirect to='/wines' /> } 
 
             
+             
         </div>
     )
 }
-
-
 
 export default SingleWine

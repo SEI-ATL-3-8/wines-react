@@ -1,7 +1,3 @@
-
-
-
-
 const Buttons = (props) => {
     return (
         <div>
@@ -15,12 +11,10 @@ const Buttons = (props) => {
                 <input type="submit" value="Submit Edits" className="button" />
             }
             { props.button === 'submitDelete' && 
-                <input type="submit" value="Delete Wine" className="button" />
+                <input type="submit" value="Delete Wine" className="button" onClick={props.activate} />
             }
         </div>
     )
 }
-
-
 
 export default Buttons

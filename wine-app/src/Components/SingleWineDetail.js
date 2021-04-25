@@ -10,6 +10,7 @@ const SingleWineDetail = (props) => {
                 </div>
                 <div className="wine-detail-text-box">
                     <Buttons button={'toggleEdit'} onClick={props.triggerEdit} />
+
                     <p className="wine-detail-text"><span className="wine-detail-text-name">{props.wineDetail.name}</span></p>
                     <p className="wine-detail-text">Year: {props.wineDetail.year}</p>
                     <p className="wine-detail-text">Grapes: {props.wineDetail.grapes}</p>
@@ -17,7 +18,8 @@ const SingleWineDetail = (props) => {
                     <p className="wine-detail-text">Region: {props.wineDetail.region}</p>
                     <p className="wine-detail-text">Price: ${props.wineDetail.price}</p>
                     <p className="wine-detail-text">Description: {props.wineDetail.description}</p>
-                    <Buttons button={'submitDelete'} onClick={props.handleDelete} />
+                    
+                    <Buttons button={'submitDelete'} activate={props.handleDelete} />
                 </div>
             </div> 
             }
@@ -93,13 +95,8 @@ const SingleWineDetail = (props) => {
                 </form>
             </div> 
             }
-
-
         </div>       
     )
 }
-
-
-
 
 export default SingleWineDetail

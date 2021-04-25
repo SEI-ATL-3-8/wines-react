@@ -29,9 +29,6 @@ const CreateNewPage = (props) => {
             picture: newImage
         })
         setRedirectTo(response.data.id)
-        //console.log(response)
-        //console.log(response.status)
-        //console.log(response.data.id)
     }
 
     const handleCreate = (e) => {
@@ -39,8 +36,6 @@ const CreateNewPage = (props) => {
         createNewWine()
         props.getAllWines()
     }
-
-    
 
     return (
         <div className="wine-detail-container">
@@ -71,6 +66,5 @@ const CreateNewPage = (props) => {
         </div>
     )
 }
-
 
 export default CreateNewPage
