@@ -11,7 +11,9 @@ const AllWines = (props) => {
     try {
       let response = await axios.get(apiUrl)
       setAllWines(response.data)
-    } catch (error) {
+
+    
+   } catch (error) {
       console.log(error)
     }
   }
@@ -20,10 +22,24 @@ const AllWines = (props) => {
       fetchAllWines()},[])
 
   return (
-    <div className="allWines">
+    <div>
       <h1>All Wines</h1>
+      <div className="wineinfo">
+
+      {allWines.map((wine) => {
+        return (
+          <div key={wine.id} className="winediv">
+            <h5>{wine.name}</h5>
+            <img src={wine.picture}></img>
+            <span>{wine.country}</span>
+          </div>
+        )}  
+      )}
+      </div>
     </div>
-  )
-}
+    )
+  }
+  
+
 
 export default AllWines

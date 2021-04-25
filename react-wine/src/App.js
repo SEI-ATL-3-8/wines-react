@@ -12,6 +12,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">Wine Time</header>
+      <Navbar />
       <AllWines />
     </div>
   );
