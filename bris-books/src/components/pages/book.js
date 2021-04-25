@@ -1,7 +1,9 @@
 import React, { useState , useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 const Book = (props) => {
     const[BookInfo, setBookInfo] = useState([])
+  
 
     const handleInfo = () => {
         let arr = []
@@ -11,22 +13,31 @@ const Book = (props) => {
         }
     }
 
+
     useEffect(()=>{handleInfo()},[props])
 
     return(
-        <div className = 'singleBook'>
+        <div>
+            <div className = 'singleBook'>
+                <div>
+                    <img src = {props.image} />
+                </div>
 
-            <div>
-                <img src = {props.image} />
+                <div className = 'info'> 
+                    {BookInfo.map((book, i) => (
+                    <div key = {i}>{book}</div>
+                    ))}
+                </div>
+
             </div>
 
-            <div className = 'info'> 
-                {BookInfo.map((book,i) => (
-                <div key = {i}>{book}</div>
-                ))}
+            <div className = 'buttons'>
+                <button > <Link to= {`/edit/${props.id}`}>Edit Book</Link> </button>
             </div>
+
 
         </div>
+
     
     )
 }
