@@ -9,6 +9,7 @@ import Home from './pages/Home'
 import AllBook from './pages/AllBook'
 import Create from './pages/CreateBook'
 import CreateBook from './pages/CreateBook';
+import SingleBook from './components/SingleBook';
 
 // console.log(env) This is to check env
 
@@ -17,6 +18,7 @@ function App() {
   return (
     <div className="App">
      <Navbar />
+
      <Route 
       path = "/"
       exact
@@ -27,6 +29,7 @@ function App() {
 
      <Route 
       path="/books"
+      exact
       render = { () =>
         <AllBook />
       }
@@ -38,6 +41,14 @@ function App() {
         <CreateBook />
       }
      />
+
+      <Route
+            path="/books/:id"
+            render={(routingInfo) => {
+                // console.log(routingInfo);
+                return <SingleBook bookId={routingInfo.match.params.id}/>
+            }}
+            />    
     </div>
   );
 }

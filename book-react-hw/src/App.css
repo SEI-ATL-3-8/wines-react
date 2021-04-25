@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+
+
+.createForm {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: 30px auto;
+}
+
+input {
+  font-size: 1.5rem;
+  width: 100%;
+  box-sizing: border-box;
+}
