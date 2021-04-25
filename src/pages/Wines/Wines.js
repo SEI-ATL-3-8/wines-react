@@ -30,9 +30,8 @@ export default function Wines() {
         setLoaded(true);
     }, [wines])
 
+ 
 
-
-    console.log(loaded, wines);
     return (
         <div className="container">
             {!loaded  ? 

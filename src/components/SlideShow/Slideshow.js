@@ -15,7 +15,7 @@ export default function Slideshow ({images}){
         changeImageIndex();
 
         return () => clearTimeout(timer);
-    }, [ currentImageIndex]);
+    }, [ currentImageIndex ]);
 
 
     return (

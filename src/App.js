@@ -6,6 +6,7 @@ import { Route, Switch } from 'react-router';
 import './App.css';
 import Navbar from './headers/Navbar';
 import Home from './pages/Home/Home';
+import Wine from './pages/Wine/Wine';
 import Wines from './pages/Wines/Wines';
 
 function App() {
@@ -17,8 +18,11 @@ function App() {
         <Route exact path="/">
           <Home />
         </Route>
-        <Route path="/wines">
+        <Route exact path="/wines">
           <Wines />
+        </Route>
+        <Route path="/wines/:id">
+          <Wine />
         </Route>
 
       </Switch>

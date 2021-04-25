@@ -1,5 +1,7 @@
 .slideshow {
     height: calc(100vh - 81px);
+    border-top: 60px solid black;
+    border-bottom: 60px solid black;
 }
 
 .slideshow img {
