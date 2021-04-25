@@ -1,0 +1,23 @@
+{
+  "name": "wines-react",
+  "version": "1.0.0",
+  "description": "Your mission is to build a react frontend that consumes the wines (or books, or people) api from http://myapi-profstream.herokuapp.com/. In this readme, any reference to books, wines, or people refers to whichever api you choose to work with.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SEI-ATL-3-8/wines-react.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SEI-ATL-3-8/wines-react/issues"
+  },
+  "homepage": "https://github.com/SEI-ATL-3-8/wines-react#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "react-router-dom": "^5.2.0"
+  }
+}
