@@ -1,0 +1,40 @@
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+.col {
+    width: 25%;
+    margin-bottom: 20px;
+}
+
+.card {
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.589);
+    box-sizing: border-box;
+    display: block;
+    height: 350px;
+    text-decoration: none;
+    color: rgb(88, 6, 88);
+    box-shadow: 1px 1px 1px 1px rgba(82, 24, 79, 0.479);
+    border-radius: 5px;
+    background: rgb(255, 255, 255);
+}
+
+.card img {
+    height: 80%;
+    width: 80%;
+    object-fit: cover;
+}
+
+.card h3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+    margin-bottom: 10px;
+    height: 50px;
+}
