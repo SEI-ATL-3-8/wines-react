@@ -6,23 +6,17 @@ import SingleWineMini from '../Components/SingleWineMini'
 
 
 
-const AllWinesPage = () => {
 
-const [allWines, setAllWines] = useState([])
+const AllWinesPage = (props) => {
 
-  const getAllWines = async () => {
-    console.log('Sending get request from API')
-    let response = await axios.get(`${env.API_URL}`)
-    console.log('Received data from API', response.data)
-    setAllWines(response.data)
-  }
 
-  useEffect( () => { getAllWines() }, [] )
 
     return (
         <div className="page">
             <span className="home-h1">Here are the wines!</span>
-            <SingleWineMini allWines={allWines} />
+            <SingleWineMini allWines={props.allWines} />
+
+            
         </div>
     )
 }
