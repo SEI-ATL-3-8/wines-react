@@ -4,11 +4,7 @@ import axios from 'axios'
 import env from 'react-dotenv'
 
 const SingleBook = (props) => {
-    // console.log('made it here', props);
-    // console.log(props.id);
     const [oneBook, setOneBook] = useState({})
-    // console.log(props.url);
-    // console.log(env.API_URL);
 
     const fetchOneBook = () => {
         axios.get(`${env.API_URL}/${props.id}`)
@@ -17,21 +13,26 @@ const SingleBook = (props) => {
             setOneBook(response.data)
         })
     }
+    
+    const deleteBook = async () => {
+        const response = await axios.delete(`${env.API_URL}/${props.id}`)
+        console.log(response);
+    } 
 
-    useEffect(fetchOneBook, [])
+    useEffect(fetchOneBook, [props.id])
 
     return (
         <div className = 'singleBookContainer'>
             <h1>{oneBook.title}</h1>
             <h2>{oneBook.author}</h2>
             <p>{oneBook.release_date}</p>
-            <img src = {oneBook.image} ></img>
+            <img src = {oneBook.image} alt= '' ></img>
 
             <div className = 'buttonContainer'>
                 <Link to = {`/updatebook/${props.id}`}>
                     <button>UPDATE</button>
                 </Link>
-                <button>DELETE</button>
+                <button onClick = {() => {deleteBook()}}>DELETE</button>
 
             </div>
         </div>

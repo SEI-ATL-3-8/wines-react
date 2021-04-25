@@ -1,7 +1,19 @@
+import axios from "axios"
+import env from 'react-dotenv'
 import { useState } from "react"
+import { useHistory } from "react-router"
 
 const UpdateBook = (props) => {
+    console.log(props);
     const [updateBook, setUpdateBook] = useState({title: '', author: '', release_date: '', image: ''})
+    const { push } = useHistory();
+
+    const putBook = (handleChange) => {
+        axios.put(`${env.API_URL}/${props.id}`, handleChange)
+        .then((response) => {
+            console.log(response);
+        })
+    }
 
     const handleChange = (e) => {
         const name = e.target.name
@@ -11,8 +23,14 @@ const UpdateBook = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        props.putBook(updateBook)
+        putBook(updateBook)
+
+        push({
+            pathname: '/allbooks'
+        })
     }
+
+    console.log(updateBook);
 
     return (
         <div className = 'updateForm' >

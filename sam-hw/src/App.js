@@ -1,31 +1,16 @@
 import './App.css';
 import {Route, Link} from 'react-router-dom'
-import axios from 'axios'
-import env from 'react-dotenv'
+
 
 import Home from './pages/Home'
-import AllBooks from './pages/AllBooks'
 import SingleBook from './pages/SingleBook'
 import AddBook from './pages/AddBook'
 import UpdateBook from './pages/UpdateBook'
+import AllBooks from './pages/AllBooks'
+
 
 
 function App() {
-
-  const postBook = (book) => {
-    axios.post(`${env.API_URL}`, book)
-    .then((response) => {
-      console.log(response);
-    })
-  }
-
-  const putBook = (book) => {
-    axios.put(`${env.API_URL}/:id`, book)
-    .then((response) => {
-      console.log(response);
-    })
-  }
-
   return (
     <div className="navBar"> 
     <Link to = '/'>HOME</Link>{' | '}
@@ -36,19 +21,22 @@ function App() {
       <Home />
     </Route>
     
-   
-    <Route exact path = '/allbooks' component = {AllBooks} />
+    {/* <Route exact path = '/allbooks' component = {AllBooks} /> */}
+    <Route exact path = '/allbooks' render = {() => {
+      return <AllBooks component = {AllBooks} />
+    }} />
+
     <Route path = '/allbooks/:id' render = {(routingInfo) => {
       return <SingleBook id = {routingInfo.match.params.id} />
     }} />
 
     <Route path = '/addbook'  >
-      <AddBook postBook = {postBook} />
+      <AddBook />
       </Route>
 
-    <Route path = '/updatebook/:id'>
-      <UpdateBook putBook = {putBook} />
-      </Route>  
+    <Route path = '/updatebook/:id' render = {(routingInfo) => {
+      return <UpdateBook id = {routingInfo.match.params.id} />
+    }}/>
 
     </div>
   );

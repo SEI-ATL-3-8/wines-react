@@ -1,8 +1,18 @@
 import { useState } from 'react'
+import axios from 'axios'
+import env from 'react-dotenv'
+import { useHistory } from 'react-router-dom'
 
 const AddBook = (props) => {
-    // console.log(props);
     const [newBook, setNewBook] = useState({title: '', author: '', release_date: '', image: ''})
+    const { push } = useHistory();
+
+    const postBook = (book) => {
+        axios.post(`${env.API_URL}`, book)
+        .then((response) => {
+          console.log(response);
+        })
+      }
 
     const handleChange = (e) => {
         const name = e.target.name
@@ -12,7 +22,11 @@ const AddBook = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        props.postBook(newBook)
+        postBook(newBook)
+
+        push({
+            pathname: '/allbooks'
+        })
     }
 
     console.log(newBook);
