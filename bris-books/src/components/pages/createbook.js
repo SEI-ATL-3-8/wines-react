@@ -9,22 +9,15 @@ const CreateBook = (props) => {
     const[status, setStatus] = useState(0)
     const[Id, setId] = useState(0)
 
-    useEffect(() => {setStatus(0)},[])
-    useEffect(()=>{handleInfo()},[])
-
-    render() 
-    if(status === 201){
-        return <Redirect to= {`/book/${Id}`} />
-    }
-
+    
     const handleInfo = () => {
         props.setTitle('')
         props.setAuthor('')
         props.setDate('')
         props.setImage('')
     }
-
-
+    
+    
     const handleAdd = async () => {
         const res = await axios.post(props.url, {
             title: props.Title,
@@ -38,8 +31,15 @@ const CreateBook = (props) => {
             setStatus(201)
         }
     }
+    
+    useEffect(() => {setStatus(0)},[])
+    useEffect(()=>{handleInfo()},[])
 
-
+    render() 
+    if(status === 201){
+        return <Redirect to= {`/book/${Id}`} />
+    }
+    
     return(
     
         <div className = 'create'>

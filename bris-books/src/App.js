@@ -51,7 +51,7 @@ function App() {
       <Route path = '/book/:id' render={(props) => {
         const book = AllBooks.find(book => book.id.toString() === props.match.params.id) 
         props = {...props, ...book} 
-        return <Book {...props } />
+        return <Book {...props } url = {apiUrl} />
         }}/>
     </div>
   );

@@ -8,22 +8,15 @@ import axios from 'axios'
 const EditBook = (props) => {
     const[status, setStatus] = useState(0)
 
-    useEffect(() => {setStatus(0)},[])
-    useEffect(()=>{handleInfo()},[])
-
-    render() 
-    if(status === 201){
-        return <Redirect to= {`/book/${props.id}`} />
-    }
-
+    
     const handleInfo = () => {
         props.setTitle(props.title)
         props.setAuthor(props.author)
         props.setDate(props.release_date)
         props.setImage(props.image)
     }
-
-
+    
+    
     const handleEdit = async () => {
         const res = await axios.put(`${props.url}/${props.id}`,{
             title: props.Title,
@@ -37,6 +30,15 @@ const EditBook = (props) => {
         }
     }
     
+    
+    useEffect(() => {setStatus(0)},[])
+    useEffect(()=>{handleInfo()},[])
+    
+    render() 
+    if(status === 201){
+        return <Redirect to= {`/book/${props.id}`} />
+    }
+    
     return(
         <div>
             <h1>EDIT {props.title} </h1>
@@ -44,7 +46,7 @@ const EditBook = (props) => {
             <button onClick={()=>{handleEdit()}}>Edit</button>
         </div>
     )
-
+    
 }
 
 export default EditBook
