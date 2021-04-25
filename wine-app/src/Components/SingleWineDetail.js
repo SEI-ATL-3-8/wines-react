@@ -1,7 +1,9 @@
-
+import Buttons from './Buttons'
 
 const SingleWineDetail = (props) => {
     return (
+        <div>
+            { props.singleType === 'view' && 
             <div className="wine-detail-box">
                 <div className="wine-detail-image-box">
                     <img className="wine-detail-image" src={props.wineDetail.picture} alt={props.wineDetail.name} />
@@ -14,8 +16,49 @@ const SingleWineDetail = (props) => {
                     <p className="wine-detail-text">Region: {props.wineDetail.region}</p>
                     <p className="wine-detail-text">Price: ${props.wineDetail.price}</p>
                     <p className="wine-detail-text">Description: {props.wineDetail.description}</p>
+                    <Buttons button={'submitDelete'} onClick={props.handleSubmit} />
                 </div>
-            </div>    
+            </div> 
+            }
+
+            { props.singleType === 'create' && 
+            <div className="wine-detail-box">
+                <div className="wine-detail-image-box">
+                    <img className="wine-detail-image" src="https://atlas-content-cdn.pixelsquid.com/stock-images/pinot-noir-bottle-wine-z07MJn2-600.jpg" alt="new wine" />
+                </div>
+                <form className="wine-detail-form" onSubmit={props.handleSubmit}>
+                    <p>Create a new wine!</p>
+                    <label className="wine-detail-label">Name:</label>
+                    <input className="wine-detail-input" placeholder="Name.." onChange={(e) => {props.setNewName(e.target.value)}} value={props.newName } />
+
+                    <label className="wine-detail-label">Year:</label>
+                    <input className="wine-detail-input" placeholder="Year.." onChange={(e) => {props.setNewYear(e.target.value)}} value={props.newYear } />
+
+                    <label className="wine-detail-label">Grapes:</label>
+                    <input className="wine-detail-input" placeholder="Grapes.." onChange={(e) => {props.setNewGrapes(e.target.value)}} value={props.newGrapes } />
+
+                    <label className="wine-detail-label">Country:</label>
+                    <input className="wine-detail-input" placeholder="Country.." onChange={(e) => {props.setNewCountry(e.target.value)}} value={props.newCountry } />
+
+                    <label className="wine-detail-label">Region:</label>
+                    <input className="wine-detail-input" placeholder="Region.." onChange={(e) => {props.setNewRegion(e.target.value)}} value={props.newRegion } />
+
+                    <label className="wine-detail-label">Price:</label>
+                    <input className="wine-detail-input" placeholder="Price.." onChange={(e) => {props.setNewPrice(e.target.value)}} value={props.newPrice } />
+
+                    <label className="wine-detail-label">Description:</label>
+                    <input className="wine-detail-input" placeholder="Description.." onChange={(e) => {props.setNewDescription(e.target.value)}} value={props.newDescription } />
+
+                    <label className="wine-detail-label">Image URL:</label>
+                    <input className="wine-detail-input" placeholder="Image URL.." onChange={(e) => {props.setNewImage(e.target.value)}} value={props.newImage } />
+
+                    <Buttons button={'submitNew'} />
+                </form>
+            </div> 
+            }
+
+
+        </div>       
     )
 }
 

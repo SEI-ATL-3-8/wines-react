@@ -104,6 +104,9 @@
   box-shadow: 0px 0px 8px orchid;
   border-radius: 65px;
   padding: 5px;
+  object-fit: cover;
+  width: 200px;
+  height: 300px;
 }
 
 .wine-detail-text-box {
@@ -114,4 +117,18 @@
 .wine-detail-text-name {
   font-family: 'Lobster';
   font-size: 1.4rem;
+}
+
+.wine-detail-form {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
+
+.wine-detail-input {
+  margin: 5px;
+}
+
+.wine-detail-label {
+  font-size: 0.8rem;
 }

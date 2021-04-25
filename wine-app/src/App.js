@@ -42,12 +42,12 @@ function App() {
       }} />
 
       <Route path='/wines/:id' render={(routingProps) => {
-         return <SingleWine id={routingProps.match.params.id}/>
+         return <SingleWine id={routingProps.match.params.id} getAllWines={getAllWines}/>
 
       }} />
 
       <Route path='/new' render={() => {
-         return <CreateNewPage />
+         return <CreateNewPage getAllWines={getAllWines}/>
 
       }} />
 
