@@ -19,7 +19,6 @@ const Book = (props) => {
 
     const handleDelete = async () => {
         const res = await axios.delete(`${props.url}/${props.id}`)
-        console.log(res);
         if(res.status === 200){
             setStatus(200)
         }
