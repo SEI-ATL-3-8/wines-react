@@ -1,0 +1,35 @@
+.brand-icon {
+    font-size: 24px;
+    color: purple;
+    margin-left: 20px;
+}
+
+header {
+    padding: 10px;
+    border-bottom: 1px solid rgba(34, 32, 32, 0.192);
+    background: rgb(252, 238, 252);
+}
+
+.wine-title {
+    display: flex;
+    margin-right: auto;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    height: 60px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    margin-right: 10px;
+    font-size: 18px;
+    font-weight: 700;
+    color: rgb(0, 0, 0);
+}
