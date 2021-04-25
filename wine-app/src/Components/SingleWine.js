@@ -2,7 +2,7 @@
 
 
 
-const Buttons = () => {
+const SingleWine = () => {
     return (
         <div>
 
@@ -12,4 +12,4 @@ const Buttons = () => {
 
 
 
-export default Buttons
+export default SingleWine
