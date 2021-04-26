@@ -9,6 +9,7 @@ import Home from './pages/Home/Home';
 import Wine from './pages/Wine/Wine';
 import WineCreate from './pages/WineCreate/WineCreate';
 import Wines from './pages/Wines/Wines';
+import WineUpdate from './pages/WineUpdate/WineUpdate';
 
 function App() {
   // env.API_URL
@@ -25,9 +26,11 @@ function App() {
         <Route path="/wines/:id">
           <Wine />
         </Route>
-
+        <Route path="/update/wines/:id">
+          <WineUpdate />
+        </Route>
         <Route path="/create">
-            <WineCreate />
+          <WineCreate />
         </Route>
 
       </Switch>

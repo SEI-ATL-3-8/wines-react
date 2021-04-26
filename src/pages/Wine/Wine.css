@@ -77,5 +77,10 @@
 #delete-wine {
     padding: 10px;
     display: block;
-    margin: 0 auto;
+    margin: 10px auto;
+   
+}
+
+a {
+    text-decoration: none;
 }

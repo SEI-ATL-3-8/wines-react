@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
-import { useParams, Link, useHistory } from 'react-router';
+import { useParams,  useHistory } from 'react-router';
+import { Link } from 'react-router-dom';
 import env from 'react-dotenv';
 import axios from 'axios';
 import './Wine.css';
 import Loader from '../../components/Loader/Loader';
-import { isCompositeComponent } from 'react-dom/test-utils';
+
 
 
 export default function Wine () {
@@ -113,6 +114,7 @@ export default function Wine () {
             </div>
 
             <button id="delete-wine" onClick={handleClickDelete}>Delete Wine</button>
+            <Link to={`/update/wines/${id}`}><button id="delete-wine">Update Wine</button></Link>
         </div>
         :
         <Loader />    
