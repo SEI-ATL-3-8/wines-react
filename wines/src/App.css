@@ -1,0 +1,17 @@
+.App {
+  text-align: center;
+ 
+}
+
+.homePage {
+  background: url("https://i.imgur.com/YvbXGM3.jpg") no-repeat center center fixed;
+  height: 600px;
+  width: 100%;
+  background-size: cover;
+  color: white;
+}
+
+nav {
+padding: 20px;
+}
+
