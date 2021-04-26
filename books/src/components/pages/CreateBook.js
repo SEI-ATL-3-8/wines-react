@@ -3,7 +3,7 @@ import axios from 'axios';
 import env from 'react-dotenv';
 import { withRouter, useHistory } from 'react-router-dom';
 
-const CreateBook = () =>
+const CreateBook = (props) =>
 {
     const [title, setTitle] = useState('');
     const [author, setAuthor] = useState('');
@@ -27,8 +27,8 @@ const CreateBook = () =>
             // check if post was successful
             if (res.status === 201)
             {
-                // return to home page
-                history.push('/');
+                // return to all books page
+                history.push('/books');
             }
         }).catch((error) =>
         {

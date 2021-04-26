@@ -17,15 +17,17 @@ const Book = (props) =>
     {
         e.preventDefault();
         // edit book details
-        axios.put(`${env.API_URL}/${props.id}`, {
+        axios.put(`${env.API_URL}/${props.bookDetails.id}`, {
             title: title,
             author: author,
             release_date: releaseDate,
             image: image
         }).then((res) =>
         {
+            // set edited books details
+            props.setBookDetails({title, author, release_date: releaseDate, image});
+            props.getAllBooks();
             setEditing(false);
-            history.push(`/books/${props.id}`);
         }).catch((error) =>
         {
             console.log(error.message);
@@ -34,8 +36,9 @@ const Book = (props) =>
 
     const deleteBook = () =>
     {
-        axios.delete(`${env.API_URL}/${props.id}`).then((res) =>
+        axios.delete(`${env.API_URL}/${props.bookDetails.id}`).then((res) =>
         {
+            // return to all books page
             history.push('/books');
         }).catch((error) =>
         {
@@ -68,20 +71,20 @@ const Book = (props) =>
             </form>
             :
             <div>
-                <h1>{props.title}</h1>
+                <h1>{props.bookDetails.title}</h1>
                 <div></div>
-                <img src={props.image} height="500px;"/>
+                <img src={props.bookDetails.image} height="500px;"/>
                 <div></div>
-                <h3>{props.author}</h3>
+                <h3>{props.bookDetails.author}</h3>
                 <div></div>
-                <h4>{props.release_date}</h4>
+                <h4>{props.bookDetails.release_date}</h4>
 
                 <div>
                     <button onClick={() => {
-                        setTitle(props.title);
-                        setAuthor(props.author);
-                        setReleaseDate(props.release_date);
-                        setImage(props.image);
+                        setTitle(props.bookDetails.title);
+                        setAuthor(props.bookDetails.author);
+                        setReleaseDate(props.bookDetails.release_date);
+                        setImage(props.bookDetails.image);
                         setEditing(true);
                     }}>Edit</button>
                     <button onClick={deleteBook}>Delete</button>

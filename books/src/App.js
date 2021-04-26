@@ -10,6 +10,7 @@ import CreateBook from './components/pages/CreateBook';
 
 function App() {
   const [allBooks, setAllBooks] = useState([]);
+  const [bookDetails, setBookDetails] = useState([]);
 
   const getAllBooks = () =>
   {
@@ -36,10 +37,12 @@ function App() {
       <Route exact path="/books" render={() => {getAllBooks(); return <AllBooks allBooks={allBooks}/>}}/>
       <Route path="/books/:id" render={(props) => {
         // console.log(props);
+        // getAllBooks();
         const book = allBooks.find(book => book.id.toString() === props.match.params.id);
-        return <Book {...book}/>;
+        setBookDetails(book);
+        return <Book bookDetails={bookDetails} setBookDetails={setBookDetails} getAllBooks={getAllBooks}/>;
       }}/>
-      <Route path="/create" component={CreateBook}/>
+      <Route path="/create" render={() => <CreateBook/>}/>
     </div>
   );
 }
