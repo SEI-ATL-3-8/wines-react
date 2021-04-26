@@ -2,6 +2,25 @@
     margin-top: 80px;
 }
 
+.wine-section .input-name {
+    margin-bottom: 20px;
+  
+    margin: 0 auto;
+    display: block;
+    padding: 20px;
+    font-size: 24px;
+}
+
+.wine-section .input-picture {
+    position: absolute;
+
+    display: block;
+    top: 40%;
+    padding: 10px;
+    width: 80%;
+    margin: 0 auto;
+}
+
 .title {
     text-align: center;
     font-size: 48px;

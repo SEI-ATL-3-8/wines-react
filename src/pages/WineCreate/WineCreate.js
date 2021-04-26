@@ -47,7 +47,7 @@ export default function WineCreate() {
     const [formParams, setFormParams] = useState(defaults);
 
     return (
-        <div className="container wine-section">
+        <div className="container wine-form-section">
             <h1 className="title">Create A Wine</h1>
             <form onClick={handleSubmit} className="form-create-wine">
                 <input onChange={handleChange} value={formParams.name} className="col-6" type="text" placeholder="Wine Name" name="name" />
