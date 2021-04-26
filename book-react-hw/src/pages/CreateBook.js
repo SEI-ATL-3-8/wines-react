@@ -1,4 +1,5 @@
 import axios from 'axios'
+import env from 'react-dotenv'
 import { useEffect, useState } from 'react'
 
 const CreateBook = (props) => {
@@ -24,16 +25,21 @@ const CreateBook = (props) => {
            e.preventDefault()
            console.log('you clicked submit');
            console.log(newBook);
+           postBook()
        }
 
 
        const postBook = async () => {
            try {
                let response = await axios.post(`${env.BACKEND_URL}/books`,{
-                    
+                title: newBook.title,
+                author: newBook.author,
+                release_date: newBook.date,
+                image: newBook.img
                })
+               console.log(response)
            } catch (error) {
-               
+               console.log(error);
            }
        }
 
@@ -44,7 +50,7 @@ const CreateBook = (props) => {
                 <input type="text" name="title" placeholder="Title" value={newBook.title} onChange={handleChange}></input>
                 <input type="text" name="author"  placeholder="author name" value={newBook.author} onChange={handleChange}></input>
                 <input type="text" name="date"  placeholder="Release Date" value={newBook.date} onChange={handleChange}></input >
-                <input type="url" name="img"  placeholder="Image URL" value={newBook.img} onChange={handleChange}></input>
+                <input type="text" name="img"  placeholder="Image URL" value={newBook.img} onChange={handleChange}></input>
                 <input type="submit" value="Create A New Book"></input>
             </form>
         </div>
