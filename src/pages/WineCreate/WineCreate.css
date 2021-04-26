@@ -1,0 +1,37 @@
+.form-create-wine {
+    border: 1px solid gray;
+    width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    border: 1px solid rgba(36, 3, 36, 0.336);
+    border-radius: 20px;
+    background: rgb(19, 1, 19);
+}
+
+.col-6 {
+    width: 45%;
+    margin: 20px 10px;
+}
+
+.form-create-wine input {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid rgb(255, 255, 255);
+    outline: none;
+    background: rgb(54, 11, 54);
+    color: white;
+}
+
+
+.wine-form-section {
+    margin-top: 20px;
+}
+
+.form-create-wine input::placeholder {
+
+   
+    color: white;
+}
