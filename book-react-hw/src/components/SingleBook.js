@@ -3,9 +3,12 @@ import env from 'react-dotenv'
 import { Link } from 'react-router-dom'
 import { useEffect, useState} from 'react'
 import { useHistory, useParams } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 
 
 const SingleBook = (props) => {
+
+    const [shouldRedirect, setShouldRedirect] = useState(false)
 
     const [book, setBook] = useState({})
     const { id } = useParams() //
@@ -26,14 +29,32 @@ const SingleBook = (props) => {
     },[props.bookId])
     // the second parameter - Only rerun useEffect when bookId changes
 
+    const deleteBook = async () => {
+        try {
+            let response = axios.delete(`${env.BACKEND_URL}/books/${id}`)
+            console.log('Book successfully deleted')
+            setShouldRedirect(true) 
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     return(
         <div>
-            <h1>{book.title}</h1>
-            <p>{book.author}</p>
-            <p>{book.release_date}</p>
+            {shouldRedirect ? 
+                <Redirect to = "/books" />
+            :
+            <div>
+                <h1>{book.title}</h1>
+                <p>{book.author}</p>
+                <p>{book.release_date}</p>
 
-            <Link to="/books">Go Back To All Books</Link>
+                <button onClick={deleteBook} setShouldRedirect>Delete</button><br></br>
+                <Link to="/books">Go Back To All Books</Link>
+            </div>
+            }
         </div>
+
     )
 }
 
