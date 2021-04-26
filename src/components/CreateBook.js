@@ -12,7 +12,7 @@ const CreateBook = () => {
         const releaseDate = e.target.releaseDate.value
 
         try {
-            const response = await axios.post('http://myapi-profstream.herokuapp.com/api/320db9/books', {
+            const response = await axios.post(`${process.env.REACT_APP_BACKEND_API}/books`, {
                 title: title,
                 author: author,
                 release_date: releaseDate,

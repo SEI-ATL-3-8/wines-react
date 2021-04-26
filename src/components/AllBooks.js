@@ -7,7 +7,7 @@ const AllBooks = () => {
     const getAllBooks = async () => {
         try {
             setIsLoading(true)
-            const response = await axios.get('http://myapi-profstream.herokuapp.com/api/320db9/books')
+            const response = await axios.get(`${process.env.REACT_APP_BACKEND_API}/books`)
             setBooks(response.data);
         } catch (error) {
             console.log(error);

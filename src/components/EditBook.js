@@ -18,7 +18,7 @@ const EditBook = (props) => {
     const getBookInfo = async () => {
         try {
             setIsLoading(true)
-            const response = await axios.get(`http://myapi-profstream.herokuapp.com/api/320db9/books/${props.bookId}`)
+            const response = await axios.get(`${process.env.REACT_APP_BACKEND_API}/books/${props.bookId}`)
             setBook(response.data);
         } catch (error) {
             console.log(error);
@@ -38,7 +38,7 @@ const EditBook = (props) => {
         const imageUrl = e.target.image.value
         const releaseDate = e.target.release_date.value
         try {
-            const response = await axios.put(`http://myapi-profstream.herokuapp.com/api/320db9/books/${book.id}`, {
+            const response = await axios.put(`${process.env.REACT_APP_BACKEND_API}/books/${book.id}`, {
                 title: title,
                 author: author,
                 release_date: releaseDate,
