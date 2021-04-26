@@ -2,15 +2,17 @@ import axios from 'axios'
 import env from 'react-dotenv'
 import { Link } from 'react-router-dom'
 import { useEffect, useState} from 'react'
+import { useHistory, useParams } from 'react-router-dom'
 
 
 const SingleBook = (props) => {
 
     const [book, setBook] = useState({})
-
+    const { id } = useParams() //
+    // console.log(id)
     const fetchBook = async () => {
         try {
-           let response = await axios.get(`${env.BACKEND_URL}/books/${props.bookId}`)
+           let response = await axios.get(`${env.BACKEND_URL}/books/${id}`)
                 // console.log(response)
                 setBook(response.data)
         } catch (error) {

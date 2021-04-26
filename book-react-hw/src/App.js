@@ -43,12 +43,9 @@ function App() {
      />
 
       <Route
-            path="/books/:id"
-            render={(routingInfo) => {
-                // console.log(routingInfo);
-                return <SingleBook bookId={routingInfo.match.params.id}/>
-            }}
-            />    
+        path="/books/:id">
+          <SingleBook />
+      </Route>    
     </div>
   );
 }

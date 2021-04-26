@@ -1,8 +1,11 @@
 import axios from 'axios'
 import env from 'react-dotenv'
+import { Redirect } from 'react-router-dom' //Redirect!
 import { useEffect, useState } from 'react'
 
 const CreateBook = (props) => {
+
+    const [shouldRedirect, setShouldRedirect] = useState(false)
 
        const newBookInfo = {
            title: "",
@@ -25,7 +28,8 @@ const CreateBook = (props) => {
            e.preventDefault()
            console.log('you clicked submit');
            console.log(newBook);
-           postBook()
+           postBook() //When submitted, Post it to backend api
+           setShouldRedirect(true) 
        }
 
 
@@ -37,7 +41,7 @@ const CreateBook = (props) => {
                 release_date: newBook.date,
                 image: newBook.img
                })
-               console.log(response)
+            //    console.log(response)
            } catch (error) {
                console.log(error);
            }
@@ -46,13 +50,20 @@ const CreateBook = (props) => {
 
     return(
         <div>
-            <form className="createForm" onSubmit = {handleSubmit}> 
-                <input type="text" name="title" placeholder="Title" value={newBook.title} onChange={handleChange}></input>
-                <input type="text" name="author"  placeholder="author name" value={newBook.author} onChange={handleChange}></input>
-                <input type="text" name="date"  placeholder="Release Date" value={newBook.date} onChange={handleChange}></input >
-                <input type="text" name="img"  placeholder="Image URL" value={newBook.img} onChange={handleChange}></input>
-                <input type="submit" value="Create A New Book"></input>
-            </form>
+            {shouldRedirect ? 
+             <Redirect to="/books" />
+            :
+
+            <div>
+              <form className="createForm" onSubmit = {handleSubmit}> 
+                  <input type="text" name="title" placeholder="Title" value={newBook.title} onChange={handleChange}></input>
+                 <input type="text" name="author"  placeholder="author name" value={newBook.author} onChange={handleChange}></input>
+                 <input type="text" name="date"  placeholder="Release Date" value={newBook.date} onChange={handleChange}></input >
+                 <input type="text" name="img"  placeholder="Image URL" value={newBook.img} onChange={handleChange}></input>
+                 <input type="submit" value="Create A New Book"></input>
+              </form>
+            </div>
+        }
         </div>
     )
 
