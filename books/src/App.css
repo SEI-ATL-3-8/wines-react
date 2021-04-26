@@ -1,0 +1,55 @@
+body{
+  background-color: aquamarine;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+
+}
+
+.create-form{
+  display: flex;
+  flex-direction: column;
+  margin: 20px
+  
+}
+input{
+  margin: 5px;
+}
+
+.home-div{
+  margin:20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.all-books{
+  margin:20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.each-book{
+  display: flex;
+  align-items: center;
+  border: 5px solid pink;
+  width: 400px;
+  min-height: 50px;
+  margin: 20px;
+
+}
+
+.each-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.book-image{
+  width:500px
+}
