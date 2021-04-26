@@ -2,6 +2,7 @@ import './App.css';
 import Navbar from './components/Navbar'
 import AllWines from './pages/AllWines'
 import SingleWine from './pages/SingleWine'
+import CreateWine from './pages/CreateWine'
 
 import axios from 'axios'
 import {Route} from 'react-router-dom'
@@ -23,6 +24,10 @@ function App() {
        render={(routingInfo) => {
         return <SingleWine id={routingInfo.match.params.id} />
       }}/>
+      <Route
+        exact path = "/CreateWine"
+        render={() =>
+       <CreateWine /> } />
     </div>
   );
 }

@@ -31,8 +31,8 @@ const SingleWine = (props) => {
                 <span>{wine.grapes}</span>
                 <span>{wine.country}</span>
                 <span>{wine.region}</span>
-                <span>{wine.description}</span>
-                <span>{wine.price}</span>
+                <p>{wine.description}<br></br></p>
+                <p>{wine.price}<br></br></p>
             </div>
             
             <Link to="/AllWines">Back to All Wines</Link>
