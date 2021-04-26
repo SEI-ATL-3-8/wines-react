@@ -1,0 +1,8 @@
+routes planning
+  - home (thru nav)
+  - new (thru nav)
+  - index (thru nav)
+  - show (from index)
+  - edit (from show)
+
+
