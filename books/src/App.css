@@ -1,0 +1,52 @@
+body {
+  background-image: url(https://i.imgur.com/ooMJAQn.jpg);
+}
+
+.App {
+  object-fit: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.allBookHolder, .createBookHolder,
+.singleBookHolder, .homePage {
+  background-color: rgba(203, 211, 240, 0.09);
+  border: solid #A664D3 1px;
+  margin: 10px;
+  justify-content: center;
+  /* display: flex;
+  flex-direction: center;
+  align-items: center; */
+}
+
+h1 {
+  color: #64c8d3bf;
+}
+
+p {
+color: #D36F64;
+}
+
+.formHolder form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  border: solid #91D364 1px;
+}
+
+.formHolder form input {
+  padding: 5px;
+  margin: 5px;
+}
+
+.bookHolder, .specificBook {
+  margin: 10px;
+  border: solid #91D364 1px;
+}
+
+.buttonDiv {
+  display: flex;
+  justify-content: space-evenly;
+}
