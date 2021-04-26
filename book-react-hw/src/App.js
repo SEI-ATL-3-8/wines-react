@@ -1,15 +1,12 @@
 import './App.css';
-import axios from 'axios'
 import { Route } from 'react-router-dom'
-import env from 'react-dotenv'
-import { useState, useEffect } from 'react'
 
 import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import AllBook from './pages/AllBook'
-import Create from './pages/CreateBook'
 import CreateBook from './pages/CreateBook';
 import SingleBook from './components/SingleBook';
+import EditBook from './components/EditBook';
 
 // console.log(env) This is to check env
 
@@ -43,9 +40,16 @@ function App() {
      />
 
       <Route
+        exact
         path="/books/:id">
           <SingleBook />
       </Route>    
+
+      <Route
+        path="/books/:id/edit"
+        >
+          <EditBook />
+      </Route>
     </div>
   );
 }

@@ -26,7 +26,7 @@ const CreateBook = (props) => {
 
        const handleSubmit = (e) => {
            e.preventDefault()
-           console.log('you clicked submit');
+        //    console.log('you clicked submit');
            console.log(newBook);
            postBook() //When submitted, Post it to backend api
            setShouldRedirect(true) 

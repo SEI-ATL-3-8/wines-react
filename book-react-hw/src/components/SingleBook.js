@@ -50,6 +50,7 @@ const SingleBook = (props) => {
                 <p>{book.release_date}</p>
 
                 <button onClick={deleteBook} setShouldRedirect>Delete</button><br></br>
+                <Link to={`/books/${id}/edit`}>Edit Book Info</Link><br></br>
                 <Link to="/books">Go Back To All Books</Link>
             </div>
             }
