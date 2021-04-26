@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useParams, Link } from 'react-router';
+import { useParams, Link, useHistory } from 'react-router';
 import env from 'react-dotenv';
 import axios from 'axios';
 import './Wine.css';
@@ -8,7 +8,7 @@ import { isCompositeComponent } from 'react-dom/test-utils';
 
 
 export default function Wine () {
-
+    const history = useHistory();
     const [wine, setWine] = useState({});
     const [loaded, setLoaded] = useState(false);
     const [updateParams, setUpdateParams] = useState({
@@ -69,6 +69,16 @@ export default function Wine () {
         getWine();
     }
 
+    const handleClickDelete = async() => {
+        try {
+            const response = await axios.delete(`${env.API_URL}/${id}`);
+            history.push('/wines');
+        }
+        catch(error) {
+
+        }
+        
+    }
 
 
 
@@ -82,7 +92,7 @@ export default function Wine () {
     <div className="container">
         {loaded ? 
         <div className="wine-section">
-            {!updateParams.name ? <h1 className="title" onMouseEnter={(e) => handleMouse(e,'name')}>{name}</h1> : <input className="input-name" placeholder="name" onMouseLeave={(e) => handleMouse(e,'picture')} type="text" />}
+            {!updateParams.name ? <h1 className="title" onMouseEnter={(e) => handleMouse(e,'name')}>{name}</h1> : <input className="input-name" placeholder="name" onMouseLeave={(e) => handleMouse(e,'name')} type="text" />}
            
             <div className="card-overlay ">
             <img src={picture} alt={name} className="title" onMouseEnter={(e) => handleMouse(e,'picture') } /> 
@@ -101,6 +111,8 @@ export default function Wine () {
                 {!updateParams.region ? <p onMouseEnter={(e) => handleMouse(e,'region')}>Region: {region}</p> : <input placeholder="region" onMouseLeave={(e) => handleMouse(e,'region')} type="text" />}
                 <p>Updated: {convertTime(updated_at)}</p>
             </div>
+
+            <button id="delete-wine" onClick={handleClickDelete}>Delete Wine</button>
         </div>
         :
         <Loader />    
