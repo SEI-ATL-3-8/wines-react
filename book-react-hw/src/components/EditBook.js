@@ -76,6 +76,7 @@ const EditBook = (props) => {
 
     return(
         <div> 
+            {/* using conditional redering to let the user type new book info in the edit form */}
             {letEdit ?
              <form className="createForm" onSubmit={handleSubmit}> 
              <input type="text" name="title" placeholder="Title" value={edittedBook.title} onChange={handleChange}></input>
