@@ -17,6 +17,8 @@ const Allbook = (props) =>{
     useEffect(getallbooks, [])
 
     return(
+        <div>
+            <h1>Here are the books in the Library</h1>
         <div className = 'allbooks'>
                 {
                     props.allbooks.map(books =>(
@@ -27,6 +29,8 @@ const Allbook = (props) =>{
                        </li>
                     ))
                 }
+        </div>
+
         </div>
     )
     
