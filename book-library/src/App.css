@@ -1,0 +1,69 @@
+.App {
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+img{
+  width: 500px;
+  height: 500px;
+}
+.form{
+  display: grid;
+  justify-content: center;
+  
+}
+.home{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  border: 4px solid grey; 
+  border-radius: 10%;
+  width: 400px;
+  height: 400px;
+  background: url(https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bGlicmFyeXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.singlebook{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid grey;
+  padding: 30px;
+  border-radius: 10%;
+  background-color: rgb(230, 227, 227);
+}
+
+.homepage{
+  background-color: rgb(230, 227, 227);
+  border: 3px solid grey;
+  border-radius: 10%;
+  padding: 10px;
+  text-decoration: underline;
+}
+.createpage, .editbook{
+  border: 3px solid grey;
+  border-radius: 10%;
+  padding: 20px;
+  background-color: rgb(230, 227, 227);
+  width: 400px;
+  height: 400px;
+
+}
+
+.allbooks{
+  border: 3px solid grey;
+  border-radius: 10%;
+  padding: 20px;
+  background-color: rgb(230, 227, 227);
+  width: 400px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
