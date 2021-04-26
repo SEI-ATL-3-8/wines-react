@@ -7,6 +7,7 @@ import './App.css';
 import Navbar from './headers/Navbar';
 import Home from './pages/Home/Home';
 import Wine from './pages/Wine/Wine';
+import WineCreate from './pages/WineCreate/WineCreate';
 import Wines from './pages/Wines/Wines';
 
 function App() {
@@ -23,6 +24,10 @@ function App() {
         </Route>
         <Route path="/wines/:id">
           <Wine />
+        </Route>
+
+        <Route path="/create">
+            <WineCreate />
         </Route>
 
       </Switch>
